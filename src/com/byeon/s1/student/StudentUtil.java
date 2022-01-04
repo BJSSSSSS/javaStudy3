@@ -14,7 +14,7 @@ public class StudentUtil {
 		System.out.println("학생의 수를 입력하시오 : ");
 		int num = sc.nextInt();
 		Student [] students = new Student[num];
-		
+		System.out.println("kkk");
 		for(int i=0; i<students.length; i++) {
 			
 			Student stu = new Student();
