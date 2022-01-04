@@ -15,6 +15,7 @@ public class StudentUtil {
 		int num = sc.nextInt();
 		Student [] students = new Student[num];
 		System.out.println("kkk");
+		System.out.println("kkk");
 		for(int i=0; i<students.length; i++) {
 			
 			Student stu = new Student();
