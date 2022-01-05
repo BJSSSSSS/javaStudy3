@@ -9,15 +9,22 @@ public class StudentView {
 	
 	public void viewStudents(Student [] students) {
 		
+
 		for(int i = 0; i<students.length; i++) {
-			System.out.println((i+1)+"번째 학생의 이름 : " + students[i].name);
-			System.out.println((i+1)+"번째 학생의 번호 : " + students[i].num);
-			System.out.println((i+1)+"번째 학생의 국어 점수 : " + students[i].kor);
-			System.out.println((i+1)+"번째 학생의 영어 점수 : " + students[i].eng);
-			System.out.println((i+1)+"번째 학생의 수학 점수 : " + students[i].math);
-			System.out.println();
+			//Student student = students[i];
+			this.viewStudent(students[i]);//클래스내 메서드 호출 가능하므로 이런식으로 코드를 줄인다
 			
+			
+//			System.out.println((i+1)+"번째 학생의 이름 : " + students.name);
+//			System.out.println((i+1)+"번째 학생의 번호 : " + students.num);
+//			System.out.println((i+1)+"번째 학생의 국어 점수 : " + students.kor);
+//			System.out.println((i+1)+"번째 학생의 영어 점수 : " + students.eng);
+//			System.out.println((i+1)+"번째 학생의 수학 점수 : " + students.math);
+//			System.out.println((i+1)+"번째 학생의 점수 평균 : " + students.avg);
+//			System.out.println();
+//			
 		}
+		
 		
 	}
 	
@@ -30,7 +37,8 @@ public class StudentView {
 		System.out.println("국어 점수 : " + st.kor);
 		System.out.println("영어 점수 : " + st.eng);
 		System.out.println("수학 점수 : " + st.math);
-		
+		System.out.println("평균 점수 : " + st.avg);
+		System.out.println();
 	}
 	
 	

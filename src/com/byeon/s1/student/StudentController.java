@@ -11,6 +11,7 @@ public class StudentController {
 		Scanner sc = new Scanner(System.in);
 		boolean flag = true;
 		StudentUtil su = new StudentUtil();
+		su.initUtil(); // 스캐너 메서드 호출했음 
 		StudentView sv = new StudentView();
 		Student [] students = null;
 		
@@ -18,7 +19,8 @@ public class StudentController {
 			
 			System.out.println("1. 학생들의 정보 입력");//util
 			System.out.println("2. 학생들의 정보 출력");//view
-			System.out.println("3. 프 로 그 램  종료");
+			System.out.println("3. 학생정보 검색 출력");
+			System.out.println("4. 프 로 그 램  종료");
 			//switch case
 			int select = sc.nextInt();
 
@@ -26,18 +28,36 @@ public class StudentController {
 			switch(select) {
 			
 			case 1:
-				System.out.println("학생 정보를 입력합니다.");
-				System.out.println();
 				students = su.makeStudents();
+				System.out.println();
 				break;
 				
 			case 2:
-				System.out.println("학생 정보를 출력합니다.");
+				if(students != null) {
+					sv.viewStudents(students);
+				}else {
+					sv.viewMessage("학생정보를 먼저 입력하세요");
+				}
 				System.out.println();
-				sv.viewStudents(students);
 				break;
 				
 			case 3:
+				if(students == null) { // 이렇게 if 하나로 끝낼수도 있다!
+					sv.viewMessage("학생정보를 먼저 입력하세요");
+					continue;
+				}
+				if(students != null) {
+					Student student = su.search(students);//이건 그냥 여기서 만들어도 될듯
+					if(student != null) {
+						sv.viewStudent(student);
+					}else {
+						sv.viewMessage("입력하신 학생 정보가 없습니다.");
+					}
+				}
+				System.out.println();
+				break;
+				
+			case 4:
 				System.out.println("프로그램을 종료합니다.");
 				flag = false;
 				break;
