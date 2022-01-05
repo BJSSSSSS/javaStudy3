@@ -9,6 +9,7 @@ public class MethodMain {
 	public static void main(String[] args) {
 		
 		System.out.println("MainMethod Start");
+		System.out.println("Git-hub Write");
 		
 		//객체 생성 코드
 		//new 클래스명();
