@@ -7,8 +7,9 @@ import java.util.Scanner;
 public class StudentUtil {
 
 	//학생 객체를 생성하고 정보를 입력 받는 곳
+	//입력 전용
 	
-	public void search(Student [] students) {
+	public Student search(Student [] students) {
 		//검색할 학생의 번호를 입력
 		//입력 받은 번호와 일치하는 학생을 찾아서
 		//리턴
@@ -16,30 +17,15 @@ public class StudentUtil {
 		Scanner sc = new Scanner(System.in);
 		System.out.println("검색할 학생의 번호를 입력하시오 : ");
 		int stuNum = sc.nextInt();
-		boolean flag = false;
-		
-		if (students == null) { // 오류 처리!
-			System.out.println("학생 정보가 없습니다.");
-			System.out.println();
-		}
+		Student stu = null;
 		
 		for(int i = 0; i<students.length; i++) {
 			if(stuNum == students[i].num) {
-				
-				System.out.println((i+1)+"번째 학생의 이름 : " + students[i].name);
-				System.out.println((i+1)+"번째 학생의 번호 : " + students[i].num);
-				System.out.println((i+1)+"번째 학생의 국어 점수 : " + students[i].kor);
-				System.out.println((i+1)+"번째 학생의 영어 점수 : " + students[i].eng);
-				System.out.println((i+1)+"번째 학생의 수학 점수 : " + students[i].math);
-				System.out.println();
-				flag = false;
+				stu = students[i];
 				break;
 			}
 		}
-		if(flag) {
-			System.out.println("입력하신 번호는 없는 번호입니다. 다시 검색해주세요");
-		}
-		
+		return stu;
 	}
 	
 	

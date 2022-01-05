@@ -21,8 +21,6 @@ public class StudentView {
 		
 	}
 	
-
-	
 	//viewStudent - 학생의 모든 정보를 출력
 	
 	public void viewStudent(Student st) {
