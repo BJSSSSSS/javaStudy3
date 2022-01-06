@@ -50,9 +50,9 @@ public class StudentMain2 {
 		Student student = su.search(students);
 		
 		if(student == null) {
-			sv.viewMessage("학생이 없다");
+			sv.view("학생이 없다");
 		}else {
-			sv.viewStudent(student);
+			sv.view(student);
 		}
 		System.out.println("종료");
 		

@@ -7,12 +7,12 @@ public class StudentView {
 	//출력 전용
 	//viewStudents - 여러명의 학생의 모든 정보를 출력
 	
-	public void viewStudents(Student [] students) {
+	public void view(Student [] students) {
 		
 
 		for(int i = 0; i<students.length; i++) {
 			//Student student = students[i];
-			this.viewStudent(students[i]);//클래스내 메서드 호출 가능하므로 이런식으로 코드를 줄인다
+			this.view(students[i]);//클래스내 메서드 호출 가능하므로 이런식으로 코드를 줄인다
 			
 			
 //			System.out.println((i+1)+"번째 학생의 이름 : " + students.name);
@@ -30,7 +30,7 @@ public class StudentView {
 	
 	//viewStudent - 학생의 모든 정보를 출력
 	
-	public void viewStudent(Student st) {
+	public void view(Student st) {
 		
 		System.out.println("이름 : " + st.name);
 		System.out.println("번호 : " + st.num);
@@ -42,7 +42,7 @@ public class StudentView {
 	}
 	
 	
-	public void viewMessage(String message) {
+	public void view(String message) {
 		//문자열 출력
 		System.out.println("====================================");
 		System.out.println(message);

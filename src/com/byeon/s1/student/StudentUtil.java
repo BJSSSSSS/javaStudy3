@@ -9,10 +9,16 @@ public class StudentUtil {
 	Scanner sc; //멤버변수로 설정했기때문에 각각에 scanner를 지정안해줘도 되며, 
 				//sc.nextInt(); 앞에는 this가 생략되어있다! this.sc.nextInt();
 
-	//학생 객체를 생성하고 정보를 입력 받는 곳
-	public void initUtil() {
+	
+	public StudentUtil() {
 		this.sc = new Scanner(System.in);
 	}
+	
+	
+	//학생 객체를 생성하고 정보를 입력 받는 곳
+//	public void initUtil() {
+//		this.sc = new Scanner(System.in);
+//	}
 	
 	
 	//입력 전용

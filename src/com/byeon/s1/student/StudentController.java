@@ -11,7 +11,7 @@ public class StudentController {
 		Scanner sc = new Scanner(System.in);
 		boolean flag = true;
 		StudentUtil su = new StudentUtil();
-		su.initUtil(); // 스캐너 메서드 호출했음 
+		//su.initUtil(); // 스캐너 메서드 호출했음 
 		StudentView sv = new StudentView();
 		Student [] students = null;
 		
@@ -34,24 +34,24 @@ public class StudentController {
 				
 			case 2:
 				if(students != null) {
-					sv.viewStudents(students);
+					sv.view(students);
 				}else {
-					sv.viewMessage("학생정보를 먼저 입력하세요");
+					sv.view("학생정보를 먼저 입력하세요");
 				}
 				System.out.println();
 				break;
 				
 			case 3:
 				if(students == null) { // 이렇게 if 하나로 끝낼수도 있다!
-					sv.viewMessage("학생정보를 먼저 입력하세요");
+					sv.view("학생정보를 먼저 입력하세요");
 					continue;
 				}
 				if(students != null) {
 					Student student = su.search(students);//이건 그냥 여기서 만들어도 될듯
 					if(student != null) {
-						sv.viewStudent(student);
+						sv.view(student);
 					}else {
-						sv.viewMessage("입력하신 학생 정보가 없습니다.");
+						sv.view("입력하신 학생 정보가 없습니다.");
 					}
 				}
 				System.out.println();
